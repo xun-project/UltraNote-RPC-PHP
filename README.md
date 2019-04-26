@@ -20,7 +20,7 @@ xun-rpc-php.php
 ## Examples
 
 ```php
-require_once('xun-rpc-php.php');
+require_once('ultranote-rpc-php.php');
                 $config = [
     'rpcUrl'     => 'http://localhost:8060/json_rpc',
     'rpcUser'     => 'theusername',
@@ -33,7 +33,7 @@ echo $UltraNoted->getStatus();
 ``` 
 
 ```php
-require_once('xun-rpc-php.php');
+require_once('ultranote-rpc-php.php');
                 $config = [
     'rpcUrl'     => 'http://localhost:8060/json_rpc',
     'rpcUser'     => 'theusername',
