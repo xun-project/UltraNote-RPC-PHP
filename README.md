@@ -14,7 +14,7 @@ UltraNote RPC PHP is a PHP wrapper for the UltraNote JSON-RPC interfaces.
 This package requires PHP >=7.1.3. Requires to download :
 
 ```
-xun-rpc-php.php
+ultranote-rpc-php.php
 ```
 
 ## Examples
