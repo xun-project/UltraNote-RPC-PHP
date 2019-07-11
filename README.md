@@ -27,7 +27,8 @@ require_once('ultranote-rpc-php.php');
     'rpcPassword' => 'thepassword'
 ];
 $coin = new XunCoin($config);
-echo $UltraNoted->getStatus();
+echo $UltraNoted->getStatus()>blockCount;
+
 
 > 39375
 ``` 
