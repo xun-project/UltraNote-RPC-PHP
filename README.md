@@ -26,7 +26,7 @@ require_once('ultranote-rpc-php.php');
     'rpcUser'     => 'theusername',
     'rpcPassword' => 'thepassword'
 ];
-$coin = new XunCoin($config);
+$UltraNoted = new XunCoin($config);
 echo $UltraNoted->getStatus()>blockCount;
 
 
@@ -40,7 +40,7 @@ require_once('ultranote-rpc-php.php');
     'rpcUser'     => 'theusername',
     'rpcPassword' => 'thepassword'
 ];
-$coin = new XunCoin($config);
+$UltraNoted = new XunCoin($config);
 echo $UltraNoted->createAddress();
 
 > 'XunG5DVpjrpNJ2JngzwaPS15iEySg2SVggQPArXzDVpJCEgHM5yhHPSR7X6nPg7E3sfN5CzibcUqXqmqMFj4DV3xgL5TsPEsCw'
@@ -48,14 +48,14 @@ echo $UltraNoted->createAddress();
 
 // Or more functions
 ```php
-$coin->deleteAddress($address);
-$coin->getUnconfirmedTransactionHashes($address);
-$coin->getTransactions($firstBlockIndex,$blockCount);
-$coin->getTransaction($transactionHash);
-$coin->sendTransaction($from,$to,$ammount);
-$coin->sendTransactionAdvanced($params);
-$coin->reset();
-$coin->save();
+$UltraNoted->deleteAddress($address);
+$UltraNoted->getUnconfirmedTransactionHashes($address);
+$UltraNoted->getTransactions($firstBlockIndex,$blockCount);
+$UltraNoted->getTransaction($transactionHash);
+$UltraNoted->sendTransaction($from,$to,$ammount);
+$UltraNoted->sendTransactionAdvanced($params);
+$UltraNoted->reset();
+$UltraNoted->save();
 ``` 
 
 ## Docs
