@@ -57,8 +57,7 @@
 			}
 		}
 		function getBalance($xun_address){
-			$marketaddress=$xun_address;
-			$response=$this->execute_xunrpc('getBalance',['address'=>$marketaddress]);
+			$response=$this->execute_xunrpc('getBalance',['address'=>$xun_address]);
 			if (!is_null($response->availableBalance)) {
 				//return 	$response->availableBalance/1000000+$response->lockedAmount/1000000;
 				return 	$response->availableBalance/1000000;
@@ -66,6 +65,14 @@
 				return null;
 			}    
 		}
+                function getPrivateKey($xun_address){
+                        $response=$this->execute_xunrpc('getSpendKeys',['address'=>$xun_address]);
+                        if (!is_null($response->guiKey)) {
+                                return $response->guiKey;
+                        } else {
+                                return null;
+                        }
+                }
 		function getUnconfirmedTransactionHashes($address){
 			$response=$this->execute_xunrpc('getUnconfirmedTransactionHashes',['address'=>$address]);
 			return $response->transactionHashes;
