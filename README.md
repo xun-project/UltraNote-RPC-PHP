@@ -1,5 +1,5 @@
 # UltraNote-RPC-PHP
-UltraNote RPC PHP is a PHP wrapper for the UltraNote JSON-RPC interfaces.
+UltraNote RPC PHP is a PHP wrapper for the UltraNote Infinity JSON-RPC interfaces.
 ---
 
 1) [Install UltraNote RPC PHP](#install-UltraNote-rpc-php)
@@ -9,7 +9,7 @@ UltraNote RPC PHP is a PHP wrapper for the UltraNote JSON-RPC interfaces.
 
 ---
 
-## Install UltraNote RPC PHP
+## Install UltraNote Infinity RPC PHP
 
 This package requires PHP >=7.1.3. Requires to download :
 
@@ -26,8 +26,8 @@ require_once('ultranote-rpc-php.php');
     'rpcUser'     => 'theusername',
     'rpcPassword' => 'thepassword'
 ];
-$UltraNoted = new XunCoin($config);
-echo $UltraNoted->getStatus()>blockCount;
+$ultranoteid = new XunCoin($config);
+echo $ultranoteid->getStatus()>blockCount;
 
 
 > 39375
@@ -40,22 +40,22 @@ require_once('ultranote-rpc-php.php');
     'rpcUser'     => 'theusername',
     'rpcPassword' => 'thepassword'
 ];
-$UltraNoted = new XunCoin($config);
-echo $UltraNoted->createAddress();
+$ultranoteid = new XunCoin($config);
+echo $ultranoteid->createAddress();
 
-> 'XunG5DVpjrpNJ2JngzwaPS15iEySg2SVggQPArXzDVpJCEgHM5yhHPSR7X6nPg7E3sfN5CzibcUqXqmqMFj4DV3xgL5TsPEsCw'
+> 'Xuniik72MxR2Cn29BzvVcsPmPn2NxNPGHfpYocW7CrjhLVs928LUmgfBJnVJE1xoHy8fdL3dVcLzF49J9Y8SsryHYMWMX4BySs3'
 ``` 
 
 // Or more functions
 ```php
-$UltraNoted->deleteAddress($address);
-$UltraNoted->getUnconfirmedTransactionHashes($address);
-$UltraNoted->getTransactions($firstBlockIndex,$blockCount);
-$UltraNoted->getTransaction($transactionHash);
-$UltraNoted->sendTransaction($from,$to,$ammount);
-$UltraNoted->sendTransactionAdvanced($params);
-$UltraNoted->reset();
-$UltraNoted->save();
+$ultranoteid->deleteAddress($address);
+$ultranoteid->getUnconfirmedTransactionHashes($address);
+$ultranoteid->getTransactions($firstBlockIndex,$blockCount);
+$ultranoteid->getTransaction($transactionHash);
+$ultranoteid->sendTransaction($from,$to,$ammount);
+$ultranoteid->sendTransactionAdvanced($params);
+$ultranoteid->reset();
+$ultranoteid->save();
 ``` 
 
 ## Docs
@@ -64,4 +64,4 @@ Documentation of the Ultranote RPC API and more PHP examples for this package ca
 
 ## License
 
-UltraNote RPC PHP is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+UltraNote Infinity RPC PHP is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
