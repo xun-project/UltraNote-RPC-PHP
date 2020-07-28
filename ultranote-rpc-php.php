@@ -1,5 +1,5 @@
 <?php 		
-	class XunCoin {
+	class XuniCoin {
 		var $rpcUrl;
 		var $rpcUser;
 		var $rpcPassword;
@@ -9,7 +9,7 @@
 			$this->rpcPassword= $config['rpcPassword'];
 		}		
  		
-		function execute_xunrpc($method='getStatus',$params=array()){
+		function execute_xunirpc($method='getStatus',$params=array()){
 			$apiUrl=$this->rpcUrl;
 			$apiuser=$this->rpcUser;
 			$apipw=$this->rpcPassword;
@@ -36,28 +36,28 @@
 		    return $obj->result;
 		}
 		function get_current_xunBlock(){
-			$response=$this->execute_xunrpc('getStatus',[]);
+			$response=$this->execute_xunirpc('getStatus',[]);
 		    return 	$response->blockCount;
 		}
 		
 		function getStatus(){
-			$response=$this->execute_xunrpc('getStatus');
+			$response=$this->execute_xunirpc('getStatus');
 			return $response;
 		}
 		function createAddress(){
-			$response=$this->execute_xunrpc('createAddress');
+			$response=$this->execute_xunirpc('createAddress');
 			return $response->address;
 		}
 		function deleteAddress($address){
-			$response=$this->execute_xunrpc('deleteAddress',['address'=>$address]);
+			$response=$this->execute_xunirpc('deleteAddress',['address'=>$address]);
 			if ($response!=null) {
 				return true;
 			}else{
 				return null;
 			}
 		}
-		function getBalance($xun_address){
-			$response=$this->execute_xunrpc('getBalance',['address'=>$xun_address]);
+		function getBalance($xuni_address){
+			$response=$this->execute_xunirpc('getBalance',['address'=>$xuni_address]);
 			if (!is_null($response->availableBalance)) {
 				//return 	$response->availableBalance/1000000+$response->lockedAmount/1000000;
 				return 	$response->availableBalance/1000000;
@@ -65,8 +65,8 @@
 				return null;
 			}    
 		}
-                function getPrivateKey($xun_address){
-                        $response=$this->execute_xunrpc('getSpendKeys',['address'=>$xun_address]);
+                function getPrivateKey($xuni_address){
+                        $response=$this->execute_xunirpc('getSpendKeys',['address'=>$xuni_address]);
                         if (!is_null($response->guiKey)) {
                                 return $response->guiKey;
                         } else {
@@ -74,19 +74,19 @@
                         }
                 }
 		function getUnconfirmedTransactionHashes($address){
-			$response=$this->execute_xunrpc('getUnconfirmedTransactionHashes',['address'=>$address]);
+			$response=$this->execute_xunirpc('getUnconfirmedTransactionHashes',['address'=>$address]);
 			return $response->transactionHashes;
 		}
 		function getTransactions($firstBlockIndex,$blockCount){
-			$response=$this->execute_xunrpc('getTransactions',['firstBlockIndex'=>$firstBlockIndex,'blockCount'=>$blockCount]);
+			$response=$this->execute_xunirpc('getTransactions',['firstBlockIndex'=>$firstBlockIndex,'blockCount'=>$blockCount]);
 			return $response->items;
 		}
 		function getTransaction($transactionHash){
-			$response=$this->execute_xunrpc('getTransaction',['transactionHash'=>$transactionHash]);
+			$response=$this->execute_xunirpc('getTransaction',['transactionHash'=>$transactionHash]);
 			return $response->transaction;
 		}
 		function sendTransactionAdvanced($params){
-			$response=$this->execute_xunrpc('sendTransaction',$params);
+			$response=$this->execute_xunirpc('sendTransaction',$params);
 			return $response->transaction;
 		}
 		function sendTransaction($from,$to,$ammount){
@@ -100,20 +100,20 @@
 						"address"=>$to
 					]
 			]];
-			$response=$this->execute_xunrpc('sendTransaction',$params);
+			$response=$this->execute_xunirpc('sendTransaction',$params);
 			return $response->transactionHash;
 		}
 		function reset(){
-			$response=$this->execute_xunrpc('reset');
+			$response=$this->execute_xunirpc('reset');
 			return $response;
 		}
 		function save(){
-			$response=$this->execute_xunrpc('save');
+			$response=$this->execute_xunirpc('save');
 			return $response;
 		}
 		function get_new_xunTransactions($Starting_block,$Current_block){
 			$range=(int)$Current_block-(int)$Starting_block;
-			$response=$this->execute_xunrpc('getTransactions',['firstBlockIndex'=>(int)$Starting_block,"blockCount"=>$range]);
+			$response=$this->execute_xunirpc('getTransactions',['firstBlockIndex'=>(int)$Starting_block,"blockCount"=>$range]);
 			$transactions = array();
 		    foreach ($response->items as $key => $item) {
 		        if(count($item->transactions)>0){

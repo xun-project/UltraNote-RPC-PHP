@@ -26,7 +26,7 @@ require_once('ultranote-rpc-php.php');
     'rpcUser'     => 'theusername',
     'rpcPassword' => 'thepassword'
 ];
-$ultranoteid = new XunCoin($config);
+$ultranoteid = new XuniCoin($config);
 echo $ultranoteid->getStatus()>blockCount;
 
 
@@ -40,7 +40,7 @@ require_once('ultranote-rpc-php.php');
     'rpcUser'     => 'theusername',
     'rpcPassword' => 'thepassword'
 ];
-$ultranoteid = new XunCoin($config);
+$ultranoteid = new XuniCoin($config);
 echo $ultranoteid->createAddress();
 
 > 'Xuniik72MxR2Cn29BzvVcsPmPn2NxNPGHfpYocW7CrjhLVs928LUmgfBJnVJE1xoHy8fdL3dVcLzF49J9Y8SsryHYMWMX4BySs3'
