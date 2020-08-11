@@ -35,7 +35,7 @@
 		    $obj=json_decode($response, false);
 		    return $obj->result;
 		}
-		function get_current_xunBlock(){
+		function get_current_xuniBlock(){
 			$response=$this->execute_xunirpc('getStatus',[]);
 		    return 	$response->blockCount;
 		}
