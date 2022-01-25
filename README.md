@@ -2,7 +2,7 @@
 UltraNote RPC PHP is a PHP wrapper for the UltraNote Infinity JSON-RPC interfaces.
 ---
 
-1) [Install UltraNote RPC PHP](#install-UltraNote-rpc-php)
+1) [Install UltraNote RPC PHP](#install-UltraNotei-rpc-php)
 1) [Examples](#examples)
 1) [Docs](#docs)
 1) [License](#license)
@@ -14,13 +14,13 @@ UltraNote RPC PHP is a PHP wrapper for the UltraNote Infinity JSON-RPC interface
 This package requires PHP >=7.1.3. Requires to download :
 
 ```
-ultranote-rpc-php.php
+ultranotei-rpc-php.php
 ```
 
 ## Examples
 
 ```php
-require_once('ultranote-rpc-php.php');
+require_once('ultranotei-rpc-php.php');
                 $config = [
     'rpcUrl'     => 'http://localhost:8060/json_rpc',
     'rpcUser'     => 'theusername',
@@ -34,7 +34,7 @@ echo $ultranoteid->getStatus()>blockCount;
 ``` 
 
 ```php
-require_once('ultranote-rpc-php.php');
+require_once('ultranotei-rpc-php.php');
                 $config = [
     'rpcUrl'     => 'http://localhost:8060/json_rpc',
     'rpcUser'     => 'theusername',
@@ -60,7 +60,7 @@ $ultranoteid->save();
 
 ## Docs
 
-Documentation of the Ultranote RPC API and more PHP examples for this package can be found at [https://wiki.ultranote.org/ultranote_coin_daemon.html](https://wiki.ultranote.org/ultranote_coin_daemon.html).
+Documentation of the Ultranote Infinity RPC API and more PHP examples for this package can be found at [https://wiki.ultranote.org/ultranote_coin_daemon.html](https://wiki.ultranote.org/ultranote_coin_daemon.html).
 
 ## License
 
