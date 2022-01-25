@@ -65,7 +65,15 @@
 				return null;
 			}    
 		}
-                function getPrivateKey($xuni_address){
+                function getViewKey($xuni_address){
+                        $response=$this->execute_xunirpc('getViewKey',['address'=>$xuni_address]);
+                        if (!is_null($response->guiKey)) {
+                                return $response->guiKey;
+                        } else {
+                                return null;
+                        }
+                }
+		function getSpendKeys($xuni_address){
                         $response=$this->execute_xunirpc('getSpendKeys',['address'=>$xuni_address]);
                         if (!is_null($response->guiKey)) {
                                 return $response->guiKey;
